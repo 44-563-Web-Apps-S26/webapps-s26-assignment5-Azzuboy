@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plant a Tree — Ajay Reddy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+    .letter { font-size: 3rem; font-weight: 700; text-align: center; padding: 1rem; background:#e8f5e9; border-radius:8px; }
+    .tree-name { text-align:center; padding:0.75rem; background:#fff3e0; border-radius:6px; }
+    .explain { margin-top:1rem; font-size:0.95rem; }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <header>
+      <h1>Plant a tree Ajay Reddy</h1>
+    </header>
+
+    <!-- Grid of letters (six columns) -->
+    <div class="row mt-4">
+      <div class="col-sm-2"><div class="letter">A</div></div>
+      <div class="col-sm-2"><div class="letter">Z</div></div>
+      <div class="col-sm-2"><div class="letter">Z</div></div>
+      <div class="col-sm-2"><div class="letter">U</div></div>
+      <div class="col-sm-2"><div class="letter">B</div></div>
+      <div class="col-sm-2"><div class="letter">O</div></div>
+    </div>
+
+    <!-- Grid of tree names (corresponding to letters) -->
+    <div class="row mt-3">
+      <div class="col-md"><div class="tree-name">Apple</div></div>
+      <div class="col-md"><div class="tree-name">Zelkova</div></div>
+      <div class="col-md"><div class="tree-name">Ziziphus (Jujube)</div></div>
+      <div class="col-md"><div class="tree-name">Umbrella Pine</div></div>
+      <div class="col-md"><div class="tree-name">Birch</div></div>
+      <div class="col-md"><div class="tree-name">Oak</div></div>
+    </div>
+
+    <!-- Answer to breakpoint question -->
+    <div class="explain">
+      <h5>Which row breaks first when reducing the browser width?</h5>
+      <p>The tree names row (the second row) breaks first. Reason: the tree names use <strong>col-md</strong>, so
+      those columns collapse into stacked blocks below the medium breakpoint (below 768px). The letters use
+      <strong>col-sm-2</strong>, which remain as columns until the small breakpoint (below 576px). Therefore
+      the <em>col-md</em> row stacks earlier as the viewport becomes narrower.</p>
+    </div>
+
+  </div>
+</body>
+</html>
