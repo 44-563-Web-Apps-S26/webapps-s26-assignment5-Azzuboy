@@ -3,23 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plant a Tree — Ajay Reddy</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+  <title>Tree Main Page - Ajay Reddy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <style>
-    .letter { font-size: 3rem; font-weight: 700; text-align: center; padding: 1rem; background:#e8f5e9; border-radius:8px; }
-    .tree-name { text-align:center; padding:0.75rem; background:#fff3e0; border-radius:6px; }
-    .explain { margin-top:1rem; font-size:0.95rem; }
+    .letter { font-size: 3rem; font-weight: 700; text-align: center; padding: 1rem; background: #e8f5e9; border-radius: 8px; }
+    .tree-name { text-align: center; padding: 0.75rem; background: #fff3e0; border-radius: 6px; }
+    .explain { margin-top: 1rem; font-size: 0.95rem; }
+    .image-grid, .thumbs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      align-items: center;
+      justify-items: center;
+      margin: 1rem auto;
+      max-width: 1100px;
+    }
+    .image-card {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      background: #fff;
+    }
+    .thumbs .image-card {
+      max-width: 160px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .section-title { text-align: center; margin-top: 1.25rem; }
   </style>
 </head>
 <body>
-  <div class="container mt-5">
-    <header>
-      <h1>Plant a tree Ajay Reddy</h1>
+  <nav class="navbar navbar-expand-sm bg-light mb-3" aria-label="Tree letters navigation bar">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">Tree Main Page</span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="mt-4">
+      <h1>Plant a Tree - Ajay Reddy</h1>
     </header>
 
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="dropdown mt-3 mb-4">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open assignment pages menu">
         Open Assignment Pages
       </button>
       <div class="dropdown-menu">
@@ -28,7 +63,21 @@
       </div>
     </div>
 
-    <!-- Grid of letters (six columns) -->
+    <div class="btn-toolbar mb-4" role="toolbar" aria-label="Grouped tree letter buttons">
+      <div class="btn-group me-2" role="group" aria-label="Letters with matching tree images">
+        <button type="button" class="btn btn-success">A</button>
+        <button type="button" class="btn btn-success">Z</button>
+        <button type="button" class="btn btn-success">Z</button>
+      </div>
+      <div class="btn-group me-2" role="group" aria-label="Letters in alert category">
+        <button type="button" class="btn btn-warning">U</button>
+        <button type="button" class="btn btn-warning">B</button>
+      </div>
+      <div class="btn-group" role="group" aria-label="Letter in danger category">
+        <button type="button" class="btn btn-danger">O</button>
+      </div>
+    </div>
+
     <div class="row mt-4">
       <div class="col-sm-2"><div class="letter">A</div></div>
       <div class="col-sm-2"><div class="letter">Z</div></div>
@@ -38,7 +87,6 @@
       <div class="col-sm-2"><div class="letter">O</div></div>
     </div>
 
-    <!-- Grid of tree names (corresponding to letters) -->
     <div class="row mt-3">
       <div class="col-md"><div class="tree-name">Apple</div></div>
       <div class="col-md"><div class="tree-name">Zelkova</div></div>
@@ -48,7 +96,6 @@
       <div class="col-md"><div class="tree-name">Oak</div></div>
     </div>
 
-    <!-- Answer to breakpoint question -->
     <div class="explain">
       <h5>Which row breaks first when reducing the browser width?</h5>
       <p>The tree names row (the second row) breaks first. Reason: the tree names use <strong>col-md</strong>, so
@@ -57,7 +104,74 @@
       the <em>col-md</em> row stacks earlier as the viewport becomes narrower.</p>
     </div>
 
+    <h2 class="section-title">Tree Images (large, responsive, clipped to square)</h2>
+    <div class="image-grid" id="largeImages">
+      <div class="image-card"><img src="Apple.png" alt="Apple tree"></div>
+      <div class="image-card"><img src="Zelkova.png" alt="Zelkova tree"></div>
+      <div class="image-card"><img src="Ziziphus.png" alt="Ziziphus tree"></div>
+    </div>
+
+    <h3 class="section-title">Thumbnails (same images, smaller)</h3>
+    <div class="thumbs" id="thumbImages">
+      <div class="image-card"><img src="Apple.png" alt="Apple tree thumbnail"></div>
+      <div class="image-card"><img src="Zelkova.png" alt="Zelkova tree thumbnail"></div>
+      <div class="image-card"><img src="Ziziphus.png" alt="Ziziphus tree thumbnail"></div>
+    </div>
+
+    <h2 class="section-title">Trees Table</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover table-sm align-middle">
+        <caption>Alphabetic list: Letter, Tree, River, Park</caption>
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Letter</th>
+            <th scope="col">Tree</th>
+            <th scope="col">River</th>
+            <th scope="col">Park</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-success">
+            <th scope="row">A</th>
+            <td>Apple</td>
+            <td>Amazon</td>
+            <td>Acadia</td>
+          </tr>
+          <tr>
+            <th scope="row">B</th>
+            <td>Birch</td>
+            <td>Brahmaputra</td>
+            <td>Bryce Canyon</td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">C</th>
+            <td>Cedar</td>
+            <td>Colorado</td>
+            <td>Central Park</td>
+          </tr>
+          <tr>
+            <th scope="row">M</th>
+            <td>Maple</td>
+            <td>Mississippi</td>
+            <td>Muir Woods</td>
+          </tr>
+          <tr class="table-warning">
+            <th scope="row">O</th>
+            <td>Oak</td>
+            <td>Orinoco</td>
+            <td>Olympic</td>
+          </tr>
+          <tr>
+            <th scope="row">Z</th>
+            <td>Zelkova</td>
+            <td>Zambezi</td>
+            <td>Zion</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
