@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>First Page - Bootstrap Starter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" 
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>  
+
+  </script>  
+
+  <style>
+    .image-grid, .thumbs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      align-items: center;
+      justify-items: center;
+      margin: 1rem auto;
+      max-width: 1100px;
+    }
+
+    .image-card {
+      width: 100%;
+      max-width: 480px; /* approx 400-500 */
+      aspect-ratio: 1 / 1; /* keep square */
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    .thumbs .image-card {
+      max-width: 160px; /* thumbnails */
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* clip/cover to square */
+      display: block;
+    }
+
+    .section-title { text-align:center; margin-top:1.25rem; }
+  </style>
+
+  </head>
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-light mb-3" aria-label="Tree letters navigation bar">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">Tree Letter Buttons</span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="alert alert-primary mt-3" role="alert">
+      You are on <strong>first.html</strong>.
+    </div>
+    <div class="btn-toolbar mb-4" role="toolbar" aria-label="Grouped tree letter buttons">
+      <div class="btn-group me-2" role="group" aria-label="Letters with matching tree images">
+        <button type="button" class="btn btn-success">A</button>
+        <button type="button" class="btn btn-success">Z</button>
+        <button type="button" class="btn btn-success">Z</button>
+      </div>
+      <div class="btn-group me-2" role="group" aria-label="Letters in alert category">
+        <button type="button" class="btn btn-warning">U</button>
+        <button type="button" class="btn btn-warning">B</button>
+      </div>
+      <div class="btn-group" role="group" aria-label="Letter in danger category">
+        <button type="button" class="btn btn-danger">O</button>
+      </div>
+    </div>
+
+    <h2 class="section-title">Tree Images (large, responsive, clipped to square)</h2>
+    <div class="image-grid" id="largeImages">
+      <div class="image-card"><img src="Apple.png" alt="Apple tree"></div>
+      <div class="image-card"><img src="Zelkova.png" alt="Zelkova tree"></div>
+      <div class="image-card"><img src="Ziziphus.png" alt="Ziziphus tree"></div>
+    </div>
+
+    <h3 class="section-title">Thumbnails (same images, smaller)</h3>
+    <div class="thumbs" id="thumbImages">
+      <div class="image-card"><img src="Apple.png" alt="Apple tree thumbnail"></div>
+      <div class="image-card"><img src="Zelkova.png" alt="Zelkova tree thumbnail"></div>
+      <div class="image-card"><img src="Ziziphus.png" alt="Ziziphus tree thumbnail"></div>
+    </div>
+
+    <h2 class="section-title">Trees Table</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover table-sm align-middle">
+        <caption>Alphabetic list: Letter, Tree, River, Park</caption>
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Letter</th>
+            <th scope="col">Tree</th>
+            <th scope="col">River</th>
+            <th scope="col">Park</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-success">
+            <th scope="row">A</th>
+            <td>Apple</td>
+            <td>Amazon</td>
+            <td>Acadia</td>
+          </tr>
+          <tr>
+            <th scope="row">B</th>
+            <td>Birch</td>
+            <td>Brahmaputra</td>
+            <td>Bryce Canyon</td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">C</th>
+            <td>Cedar</td>
+            <td>Colorado</td>
+            <td>Central Park</td>
+          </tr>
+          <tr>
+            <th scope="row">M</th>
+            <td>Maple</td>
+            <td>Mississippi</td>
+            <td>Muir Woods</td>
+          </tr>
+          <tr class="table-warning">
+            <th scope="row">O</th>
+            <td>Oak</td>
+            <td>Orinoco</td>
+            <td>Olympic</td>
+          </tr>
+          <tr>
+            <th scope="row">Z</th>
+            <td>Zelkova</td>
+            <td>Zambezi</td>
+            <td>Zion</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>
