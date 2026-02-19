@@ -12,10 +12,62 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" 
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>  
 
+  </script>  
+
+  <style>
+    .image-grid, .thumbs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      align-items: center;
+      justify-items: center;
+      margin: 1rem auto;
+      max-width: 1100px;
+    }
+
+    .image-card {
+      width: 100%;
+      max-width: 480px; /* approx 400-500 */
+      aspect-ratio: 1 / 1; /* keep square */
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    .thumbs .image-card {
+      max-width: 160px; /* thumbnails */
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* clip/cover to square */
+      display: block;
+    }
+
+    .section-title { text-align:center; margin-top:1.25rem; }
+  </style>
+
   </head>
 <body>
 
+  <div class="container">
+    <h2 class="section-title">Tree Images (large, responsive, clipped to square)</h2>
+    <div class="image-grid" id="largeImages">
+      <div class="image-card"><img src="Apple.png" alt="Apple tree"></div>
+      <div class="image-card"><img src="Zelkova.png" alt="Zelkova tree"></div>
+      <div class="image-card"><img src="Ziziphus.png" alt="Ziziphus tree"></div>
+    </div>
 
+    <h3 class="section-title">Thumbnails (same images, smaller)</h3>
+    <div class="thumbs" id="thumbImages">
+      <div class="image-card"><img src="Apple.png" alt="Apple tree thumbnail"></div>
+      <div class="image-card"><img src="Zelkova.png" alt="Zelkova tree thumbnail"></div>
+      <div class="image-card"><img src="Ziziphus.png" alt="Ziziphus tree thumbnail"></div>
+    </div>
+  </div>
 
 </body>
 
